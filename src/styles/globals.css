@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@plugin "daisyui";
 @custom-variant dark (&:is(.dark *));
 @theme inline {
 
@@ -76,43 +78,65 @@
 :root {
 
   --radius: 0.625rem;
+/* 背景色 */
+  --background: #fcfcfc; 
 
-  --background: #ffffff;
-
+/* 应用主文本颜色，深蓝灰色 */
   --foreground: #394e6a;
 
-  --card: #ffffff;
+/* 卡片组件的背景色，浅灰色 */
+  --card: #f7f7f7;
 
-  --card-foreground: #020618;
+/* 卡片组件的文本颜色 */
+  --card-foreground: #394e6a;
 
+/* 弹出提示框的背景色，纯白色 */
   --popover: #ffffff;
 
+/* 弹出提示框的文本颜色，深蓝色 */
   --popover-foreground: #020618;
 
-  --primary: #0069ff;
+ /* 主要操作色，亮蓝色 */
+  --primary: #1677FF;
 
+/* 主要操作色上的文本颜色，浅蓝色 */
   --primary-foreground: #cee4ff;
 
+ /* 次要操作色，深紫色 */
   --secondary: #463aa2;
 
+/* 次要操作色上的文本颜色，浅紫色 */
   --secondary-foreground: #d5d7ee;
 
+ /* 静音/禁用状态的背景色，非常浅的蓝灰色 */
   --muted: #f1f5f9;
 
-  --muted-foreground: #62748e;
+/* 静音/禁用状态的文本颜色，中等灰蓝色 */
+  --muted-foreground: #a1a1a1;
 
-  --accent: #f1f5f9;
+/* 强调色，浅灰色 */
+  --accent: #ebedf0;
 
-  --accent-foreground: #0f172b;
+/* 强调色上的文本颜色，中灰色 */
+  --accent-foreground: #020618;
 
+/* 危险/删除操作色，红色 */
   --destructive: #e7000b;
 
+/* 边框颜色，浅灰蓝色 */
   --border: #e2e8f0;
 
+/* 输入框边框颜色，与边框色相同 */
   --input: #e2e8f0;
 
+/* 焦点环颜色，中蓝灰色 */
   --ring: #90a1b9;
 
+  /* --chart-1: #f54900; - 图表主色，橙红色
+--chart-2: #009689; - 图表第二色，青绿色
+--chart-3: #104e64; - 图表第三色，深青色
+--chart-4: #ffb900; - 图表第四色，亮黄色
+--chart-5: #fe9a00; - 图表第五色，橙色 */
   --chart-1: #f54900;
 
   --chart-2: #009689;
@@ -123,40 +147,49 @@
 
   --chart-5: #fe9a00;
 
-  --sidebar: #f8fafc;
+/* --sidebar: #f9f9f9; - 侧边栏背景色，非常浅的灰色
+--sidebar-foreground: #394e6a; - 侧边栏文本颜色，深蓝灰色
+--sidebar-primary: #031023; - 侧边栏主要元素颜色，深蓝色
+--sidebar-primary-foreground: #cee4ff; - 侧边栏主要元素上的文本颜色，浅蓝色
+--sidebar-accent: #ebedf0; - 侧边栏强调色，浅灰蓝色
+--sidebar-accent-foreground: #0f172b; - 侧边栏强调色上的文本颜色，深蓝色
+--sidebar-border: #e2e8f0; - 侧边栏边框颜色，浅灰蓝色
+--sidebar-ring: #ffffff; - 侧边栏焦点环颜色，白色 */
 
-  --sidebar-foreground: #020618;
+  --sidebar: #f6f6f6;
 
-  --sidebar-primary: #0f172b;
+  --sidebar-foreground: #394e6a;
 
-  --sidebar-primary-foreground: #f8fafc;
+  --sidebar-primary: #031023;
 
-  --sidebar-accent: #f1f5f9;
+  --sidebar-primary-foreground: #cee4ff;
+
+  --sidebar-accent: #ebedf0;
 
   --sidebar-accent-foreground: #0f172b;
 
   --sidebar-border: #e2e8f0;
 
-  --sidebar-ring: #90a1b9;
+  --sidebar-ring: #ffffff;
 }
 
 .dark {
 
-  --background: #282a36;
+  --background: #282a35;
 
   --foreground: #f8f8f3;
 
-  --card: #0f172b;
+  --card: #30323d;
 
   --card-foreground: #f8fafc;
 
-  --popover: #0f172b;
+  --popover: #252631;
 
   --popover-foreground: #f8fafc;
 
   --primary: #ff79c6;
 
-  --primary-foreground: #16050e;
+  --primary-foreground: #424556;
 
   --secondary: #bd93f9;
 
@@ -166,13 +199,13 @@
 
   --muted-foreground: #90a1b9;
 
-  --accent: #1d293d;
+  --accent: #3d3f48;
 
-  --accent-foreground: #f8fafc;
+  --accent-foreground: #959595;
 
   --destructive: #ff6467;
 
-  --border: #ffffff1a;
+  --border: #333645;
 
   --input: #ffffff26;
 
@@ -188,36 +221,51 @@
 
   --chart-5: #ff2056;
 
-  --sidebar: #0f172b;
+  --sidebar: #252631;
 
   --sidebar-foreground: #f8fafc;
 
-  --sidebar-primary: #1447e6;
+  --sidebar-primary: #424556;
 
-  --sidebar-primary-foreground: #f8fafc;
+  --sidebar-primary-foreground: #e1e1e1;
 
-  --sidebar-accent: #1d293d;
+  --sidebar-accent: #3d3f48;
 
   --sidebar-accent-foreground: #f8fafc;
 
   --sidebar-border: #ffffff1a;
 
-  --sidebar-ring: #6a7282;
+  --sidebar-ring: #404457;
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 font-medium leading-normal ;
   }
-  body {
-    @apply bg-background text-foreground leading-normal p-2 h-screen overflow-hidden ;
+ html,body {
+    @apply bg-background   text-foreground;
   }
 }
 
-.card {
-  @apply p-4 rounded-2xl bg-gray-100 ring-1 ring-gray-200;
+.cardBase {
+  @apply p-4 rounded-xl bg-card ;
 }
-/* 
+
+.sidebarShadow {
+  @apply shadow-lg shadow-gray-900/15;
+}
+
+.navItemHover {
+  @apply rounded-md hover:bg-sidebar-accent;
+}
+.isActiveNavItem {
+  @apply bg-sidebar-primary text-sidebar-primary-foreground font-bold ;
+}
+
+.title{
+  @apply text-lg font-black;
+}
+/*
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -226,3 +274,12 @@
     @apply bg-background text-foreground;
   }
 } */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
