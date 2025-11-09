@@ -29,13 +29,12 @@ export const siteConfig = {
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
-
+  Dashboard: {
+    title: "首页",
+    url: "/home",
+    icon: <ChartPie size={18} />,
+  },
   navMall: [
-    {
-      title: "数据看板",
-      url: "/home",
-      icon: <ChartPie size={18} />,
-    },
     {
       title: "商城管理",
       url: "#",

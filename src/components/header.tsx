@@ -39,7 +39,12 @@ const findTitleByUrl = (
 
 // 将路径转换为面包屑
 const generateBreadcrumbs = (pathname: string) => {
-  // 首先从siteConfig中查找匹配的路径
+  // 首先检查是否是首页
+  if (pathname === "/home") {
+    return ["首页"];
+  }
+  
+  // 然后从siteConfig中查找匹配的路径
   const navMall = siteConfig.navMall;
   const navMerchants = siteConfig.navMerchants;
   

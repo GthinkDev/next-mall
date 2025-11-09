@@ -15,6 +15,7 @@ import {
 import NavMall from "./nav/nav-mall";
 import { siteConfig } from "@/config/site";
 import NavMerchants from "@/components/nav/nav-merchants";
+import Dashboard from "@/components/nav/dashboard";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -35,6 +36,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
+        <Dashboard />
         <NavMall />
         <NavMerchants />
       </SidebarContent>
