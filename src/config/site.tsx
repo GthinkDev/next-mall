@@ -1,13 +1,24 @@
 import {
-  BriefcaseConveyorBelt,
+  BadgeJapaneseYen,
+  BrickWallShield,
+  CalendarArrowUp,
   CalendarCog,
   ChartPie,
+  Cog,
+  Forklift,
+  Handshake,
   ListOrdered,
+  Logs,
   MonitorCog,
+  Puzzle,
   Rows3,
-  SquareTerminal,
+  Settings,
+  SquareChartGantt,
+  SquareDashedTopSolid,
   Store,
+  Sunset,
   TableProperties,
+  UserCog,
 } from "lucide-react";
 
 export const siteConfig = {
@@ -67,6 +78,31 @@ export const siteConfig = {
           ],
         },
         {
+          title: "商城设置",
+          icon: <MonitorCog size={18} />,
+          items: [
+            {
+              title: "分享设置",
+              url: "/mall/mall-settings/share-settings",
+            },
+            {
+              title: "公告管理",
+              url: "/mall/mall-settings/announcement",
+            },
+            {
+              title: "交易设置",
+              url: "/mall/mall-settings/pay-settings",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: "商城订单",
+      url: "#",
+      icon: <SquareChartGantt size={18} />,
+      items: [
+        {
           title: "订单管理",
           icon: <Rows3 size={18} />,
           items: [
@@ -114,54 +150,103 @@ export const siteConfig = {
             },
           ],
         },
+      ],
+    },
+    {
+      title: "物流管理",
+      url: "#",
+      icon: <Forklift size={18} />,
+      items: [
         {
-          title: "物流管理",
-          icon: <BriefcaseConveyorBelt size={18} />,
+          title: "默认设置",
+          url: "/mall/logistics/settings-default",
+          icon: <Settings size={18} />,
+        },
+        {
+          title: "物流设置",
+          url: "/mall/logistics/logistics-settings",
+          icon: <Cog size={18} />,
+        },
+      ],
+    },
+  ],
+  navMerchants: [
+    {
+      title: "商户管理",
+      url: "#",
+      icon: <Handshake size={18} />,
+      items: [
+        {
+          title: "商户及认证",
+          icon: <BrickWallShield size={18} />,
           items: [
             {
-              title: "默认设置",
-              url: "/mall/logistics/settings-default",
+              title: "商户列表",
+              url: "/merchants/merchants-certification/merchants-lists",
             },
             {
-              title: "物流设置",
-              url: "/mall/logistics/logistics-settings",
+              title: "未认证",
+              url: "/merchants/merchants-certification/merchants-unverified",
+            },
+            {
+              title: "意向入驻",
+              url: "/merchants/merchants-certification/merchants-in",
+            },
+            {
+              title: "商户分组",
+              url: "/merchants/merchants-certification/merchants-groups",
+            },
+            {
+              title: "回收站",
+              url: "/merchants/merchants-certification/merchants-recycling",
             },
           ],
         },
         {
-          title: "商城设置",
-          icon: <MonitorCog size={18} />,
+          title: "入驻管理",
+          icon: <Sunset size={18} />,
           items: [
             {
-              title: "分享设置",
-              url: "/mall/mall-settings/share-settings",
+              title: "入驻设置",
+              url: "/merchants/set-up/set-up-settings",
             },
             {
-              title: "公告管理",
-              url: "/mall/mall-settings/announcement",
-            },
-            {
-              title: "交易设置",
-              url: "/mall/mall-settings/pay-settings",
+              title: "认证设置",
+              url: "/merchants/set-up/set-up-certification-settings",
             },
           ],
+        },
+        {
+          title: "商户结算",
+          url: "/merchants/merchants-settlement",
+          icon: <BadgeJapaneseYen size={18} />,
+        },
+        {
+          title: "商户设置",
+          url: "/merchants/merchants-settings",
+          icon: <UserCog size={18} />,
         },
       ],
     },
     {
-      title: "订单管理",
+      title: "套餐管理",
       url: "#",
-      icon: <SquareTerminal size={18} />,
+      icon: <Puzzle size={18} />,
       items: [
         {
-          title: "商品列表",
-          icon: <SquareTerminal size={18} />,
-          items: [
-            {
-              title: "全部商品",
-              url: "#",
-            },
-          ],
+          title: "套餐列表",
+          url: "/combo/combo-lists",
+          icon: <Logs size={18} />,
+        },
+        {
+          title: "套餐订单",
+          url: "/combo/combo-orders",
+          icon: <SquareDashedTopSolid size={18} />,
+        },
+        {
+          title: "助力记录",
+          url: "/combo/combo-help",
+          icon: <CalendarArrowUp size={18} />,
         },
       ],
     },

@@ -41,9 +41,17 @@ const findTitleByUrl = (
 const generateBreadcrumbs = (pathname: string) => {
   // 首先从siteConfig中查找匹配的路径
   const navMall = siteConfig.navMall;
+  const navMerchants = siteConfig.navMerchants;
+  
+  // 先在navMall中查找
   let breadcrumbPath = findTitleByUrl(navMall, pathname);
-
-  // 如果在navMall中找到了路径，直接返回
+  
+  // 如果在navMall中没找到，再在navMerchants中查找
+  if (!breadcrumbPath) {
+    breadcrumbPath = findTitleByUrl(navMerchants, pathname);
+  }
+  
+  // 如果找到了路径，直接返回
   if (breadcrumbPath) {
     return breadcrumbPath;
   }
@@ -62,9 +70,10 @@ const generateBreadcrumbs = (pathname: string) => {
   // 添加每个路径段
   for (let i = 0; i < paths.length; i++) {
     const segment = paths[i];
-    // 尝试从navMall中查找对应的标题
+    // 尝试从navMall和navMerchants中查找对应的标题
     let found = false;
 
+    // 先在navMall中查找
     for (const item of navMall) {
       if (item.items) {
         const result = findTitleByUrl(
@@ -75,6 +84,23 @@ const generateBreadcrumbs = (pathname: string) => {
           breadcrumbPath.push(result[result.length - 1]);
           found = true;
           break;
+        }
+      }
+    }
+    
+    // 如果在navMall中没找到，再在navMerchants中查找
+    if (!found) {
+      for (const item of navMerchants) {
+        if (item.items) {
+          const result = findTitleByUrl(
+            item.items,
+            "/" + paths.slice(0, i + 1).join("/"),
+          );
+          if (result && result.length > 0) {
+            breadcrumbPath.push(result[result.length - 1]);
+            found = true;
+            break;
+          }
         }
       }
     }
